@@ -450,6 +450,12 @@ alluvial_long = function( data
       mutate(value_label = value)
     
   }
+
+    
+  if(!is.null(custom_value) && !stratum_labels){
+    warning("Warning with stratum_labels set to FALSE
+              no labels will be shown.")
+  }
   
   p <- ggplot(data_new,
               aes(x = x
